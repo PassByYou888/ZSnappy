@@ -13,7 +13,7 @@
 # linux兼容性说明
 
 - 直接安装预编译好的snappy动态库,可以支持arm-v7/arm-arch-64/mips/龙芯,等等版本linux系统
-- 作责所使用的Linux系统为debian+ubuntu
+- 我所使用的Linux系统为debian+ubuntu
 
 ```
 // 安装预编译snappy库
