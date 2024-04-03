@@ -73,19 +73,19 @@ type
     );
 
 function snappy_compress(input: Pointer; input_length: NativeUInt; compressed: Pointer; var compressed_length: NativeUInt): TSnappy_Status; cdecl;
-  external C_Snappy_Lib name C_FuncPre + 'snappy_compress' delayed;
+  external C_Snappy_Lib name C_FuncPre + 'snappy_compress' {$IFDEF DELPHI}delayed {$ENDIF DELPHI};
 
 function snappy_uncompress(compressed: Pointer; compressed_length: NativeUInt; uncompressed: Pointer; var uncompressed_length: NativeUInt): TSnappy_Status; cdecl;
-  external C_Snappy_Lib name C_FuncPre + 'snappy_uncompress' delayed;
+  external C_Snappy_Lib name C_FuncPre + 'snappy_uncompress' {$IFDEF DELPHI}delayed {$ENDIF DELPHI};
 
 function snappy_max_compressed_length(source_length: NativeUInt): NativeUInt; cdecl;
-  external C_Snappy_Lib name C_FuncPre + 'snappy_max_compressed_length' delayed;
+  external C_Snappy_Lib name C_FuncPre + 'snappy_max_compressed_length' {$IFDEF DELPHI}delayed {$ENDIF DELPHI};
 
 function snappy_uncompressed_length(compressed: Pointer; compressed_length: NativeUInt; var result_: NativeUInt): TSnappy_Status; cdecl;
-  external C_Snappy_Lib name C_FuncPre + 'snappy_uncompressed_length' delayed;
+  external C_Snappy_Lib name C_FuncPre + 'snappy_uncompressed_length' {$IFDEF DELPHI}delayed {$ENDIF DELPHI};
 
 function snappy_validate_compressed_buffer(compressed: Pointer; compressed_length: NativeUInt): TSnappy_Status; cdecl;
-  external C_Snappy_Lib name C_FuncPre + 'snappy_validate_compressed_buffer' delayed;
+  external C_Snappy_Lib name C_FuncPre + 'snappy_validate_compressed_buffer' {$IFDEF DELPHI}delayed {$ENDIF DELPHI};
 
 implementation
 
