@@ -48,6 +48,12 @@
 *)
 unit Z.Snappy;
 
+{$IFDEF FPC}
+  {$UNDEF Delphi}
+{$ELSE FPC} { IF DELPHI }
+  {$DEFINE Delphi}
+{$ENDIF FPC}
+
 interface
 
 const
