@@ -57,6 +57,9 @@ const
 {$ELSEIF Defined(WIN64)}
   C_Snappy_Lib = 'snappy_x64.dll';
   C_FuncPre = '';
+{$ELSEIF Defined(Linux)}
+  C_Snappy_Lib = 'libsnappy.so';
+  C_FuncPre = '';
 {$ELSE}
 {$MESSAGE Error 'Unsupported platform'}
 {$ENDIF}
@@ -70,19 +73,19 @@ type
     );
 
 function snappy_compress(input: Pointer; input_length: NativeUInt; compressed: Pointer; var compressed_length: NativeUInt): TSnappy_Status; cdecl;
-  external C_Snappy_Lib name C_FuncPre + 'snappy_compress';
+  external C_Snappy_Lib name C_FuncPre + 'snappy_compress' delayed;
 
 function snappy_uncompress(compressed: Pointer; compressed_length: NativeUInt; uncompressed: Pointer; var uncompressed_length: NativeUInt): TSnappy_Status; cdecl;
-  external C_Snappy_Lib name C_FuncPre + 'snappy_uncompress';
+  external C_Snappy_Lib name C_FuncPre + 'snappy_uncompress' delayed;
 
 function snappy_max_compressed_length(source_length: NativeUInt): NativeUInt; cdecl;
-  external C_Snappy_Lib name C_FuncPre + 'snappy_max_compressed_length';
+  external C_Snappy_Lib name C_FuncPre + 'snappy_max_compressed_length' delayed;
 
 function snappy_uncompressed_length(compressed: Pointer; compressed_length: NativeUInt; var result_: NativeUInt): TSnappy_Status; cdecl;
-  external C_Snappy_Lib name C_FuncPre + 'snappy_uncompressed_length';
+  external C_Snappy_Lib name C_FuncPre + 'snappy_uncompressed_length' delayed;
 
 function snappy_validate_compressed_buffer(compressed: Pointer; compressed_length: NativeUInt): TSnappy_Status; cdecl;
-  external C_Snappy_Lib name C_FuncPre + 'snappy_validate_compressed_buffer';
+  external C_Snappy_Lib name C_FuncPre + 'snappy_validate_compressed_buffer' delayed;
 
 implementation
 
