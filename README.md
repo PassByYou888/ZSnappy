@@ -12,7 +12,7 @@
 
 - 支持objfpc/delphi
 - 目前预编译只有x86/x64两个版本,最近有点忙,空下来会给出android/ios/osx各个平台的预编版本
-- 预编译的x86/x64需要vs2017依赖库支持
+- 预编译的x86/x64需要vs2022依赖库支持
 
 # linux兼容性说明
 
@@ -39,6 +39,10 @@ find / -name libsnappy.so
 # macos/ios兼容性说明
 
 - mac-mini改装windows,暂时没有可以构建macos/ios的系统工具
+
+# 更新说明
+
+**2024-12** 全部动态库统一使用VS2022构建,依赖库同步更新
 
  
 by.qq600585
